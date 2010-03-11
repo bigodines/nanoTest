@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>NanoTest - example</title>
+	<script type="text/javascript" language="Javascript" src="nano.js"></script>
+</head>
+<body>
+<h1>NanoTest</h1>
+<div>
+	<p>NanoTest is a extremely simple and super lightweight unit testing framework written in javascript.</p>
+	<p>Hopefully NanoTest will help those users who get intimidated by JsUnit and other testing frameworks to get used to TDD development :P</p>
+	<p><strong>here's an example usage:</strong></p>
+</div>
+	<pre>
+	var foo = 7;
+	var bar = 4;
+
+	function nanoTest_foo() {
+		return NanoTest.assert('foo is not 7', foo == 7) || 0;
+	};
+
+	function nanoTest_bar() {
+		return NanoTest.assert('bar is not 5', bar == 5) || 0;
+	};
+	
+	var fails = NanoTest.runAll();
+	for (fail in fails) {
+		document.write("Failed: "+fails[fail]);
+	}
+	</pre>
+	<a href="example.html">click here to see it in action</a><br/>
+	<a href="nano.tgz">click here to download NanoTest</a>
+</body>
+</html>

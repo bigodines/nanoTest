@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>NanoTest - example</title>
+	<script type="text/javascript" language="Javascript" src="nano.js"></script>
+</head>
+<body>
+	<script>
+	var foo = 7;
+	var bar = 4;
+
+	function nanoTest_foo() {
+		return NanoTest.assert('foo is not 7', foo == 7) || 0;
+	};
+
+	function nanoTest_bar() {
+		return NanoTest.assert('bar is not 5', bar == 5) || 0;
+	};
+	
+	var fails = NanoTest.runAll();
+	for (fail in fails) {
+		document.write("Failed: "+fails[fail]+"<br />");
+	}
+	</script>
+</body>
+</html>
